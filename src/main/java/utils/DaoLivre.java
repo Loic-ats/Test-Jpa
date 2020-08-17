@@ -140,5 +140,43 @@ public class DaoLivre {
 		em.close();
 		factory.close();
 	}
+	
+	public void listeLivresAuteur(String auteur) {
+
+		EntityManager em = factory.createEntityManager();
+
+		if (em != null) {
+
+			String query = "SELECT l FROM Livre l WHERE l.auteur = :param1";
+	
+			TypedQuery<Livre> q = em.createQuery(query, Livre.class);
+			q.setParameter("param1", auteur);
+			for (Livre l : q.getResultList()) {
+				System.out.println(l);
+			}
+		}
+
+		em.close();
+		factory.close();
+	}
+	
+	public void listeLivresTitre(String titre) {
+
+		EntityManager em = factory.createEntityManager();
+
+		if (em != null) {
+
+			String query = "SELECT l FROM Livre l WHERE l.titre = :param1";
+	
+			TypedQuery<Livre> q = em.createQuery(query, Livre.class);
+			q.setParameter("param1", titre);
+			for (Livre l : q.getResultList()) {
+				System.out.println(l);
+			}
+		}
+
+		em.close();
+		factory.close();
+	}
 
 }

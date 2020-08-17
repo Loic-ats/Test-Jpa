@@ -32,7 +32,15 @@ public class AppliTestJpa {
 		
 		// ------------------AFFICHER LA LISTE DES LIVRES DE LA BDD-----------------
 
-		d.listeLivres();
+		//d.listeLivres();
+		
+		// ------------------AFFICHER LA LISTE DES LIVRES EN FONCTION DES AUTEURS----------------
+		
+		//d.listeLivresAuteur("Emile Zola");
+		
+		// ------------------AFFICHER LA LISTE DES LIVRES EN FONCTION D'UN TITRE----------------
+		
+		d.listeLivresTitre("Vingt mille lieues sous les mers");
 	}
 
 }
