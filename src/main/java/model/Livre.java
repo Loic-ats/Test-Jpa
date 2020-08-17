@@ -1,4 +1,4 @@
-package entity;
+package model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Livre {
 
 	@Id
-	private Integer id;
+	private int id;
 	
 	@Column(name="TITRE", length= 255, nullable= false, unique = true)
 	private String titre;
@@ -47,4 +47,10 @@ public class Livre {
 		this.auteur = auteur;
 	}
 
+	@Override
+	public String toString() {
+		return "Livre [id=" + id + ", titre=" + titre + ", auteur=" + auteur + "]";
+	}
+
+	
 }
