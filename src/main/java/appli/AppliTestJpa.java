@@ -1,6 +1,7 @@
 package appli;
 
 import model.Livre;
+import utils.DaoEmprunt;
 import utils.DaoLivre;
 
 public class AppliTestJpa {
@@ -8,6 +9,7 @@ public class AppliTestJpa {
 	public static void main(String[] args) {
 
 		DaoLivre d = new DaoLivre();
+		DaoEmprunt e = new DaoEmprunt ();
 
 		// ------------------AJOUTER LIVRE-----------------
 
@@ -40,7 +42,16 @@ public class AppliTestJpa {
 		
 		// ------------------AFFICHER LA LISTE DES LIVRES EN FONCTION D'UN TITRE----------------
 		
-		d.listeLivresTitre("Vingt mille lieues sous les mers");
+		// d.listeLivresTitre("Vingt mille lieues sous les mers");
+		
+		// ------------------AFFICHER TOUS LES LIVRES D'UN EMPRUNT----------------
+		
+		//e.listeLivresEmprunt(1);
+		
+		// ------------------AFFICHER TOUS LES EMPRUNT D'UNE CLIENT DONNE----------------
+	
+		e.listeEmpruntClient(3);
+		
 	}
 
 }

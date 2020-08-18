@@ -1,8 +1,11 @@
 package model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +22,11 @@ public class Livre {
 	@Column(name ="AUTEUR", length = 50, nullable = false, unique = true)
 	private String auteur;
 	
+	@OneToMany(mappedBy = "livre")
+	private List<Compo> listCompo;
+	
+
+
 	//Constructeur sans arguments pour l'entity "Livre"
 	public Livre() {
 	}
@@ -45,6 +53,18 @@ public class Livre {
 
 	public void setAuteur(String auteur) {
 		this.auteur = auteur;
+	}
+	
+	public List<Compo> getListCompo() {
+		return listCompo;
+	}
+
+	public void setListCompo(List<Compo> listCompo) {
+		this.listCompo = listCompo;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
